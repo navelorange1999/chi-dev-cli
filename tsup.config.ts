@@ -3,13 +3,10 @@ import { resolve } from 'path';
 
 export default defineConfig({
   entry: ['src/cli.ts'],
-  format: ['cjs'],
+  format: ['esm'],
   target: 'node18',
   outDir: 'dist',
   clean: true,
-  banner: {
-    js: '#!/usr/bin/env node',
-  },
   bundle: true,
   minify: false,
   sourcemap: true,

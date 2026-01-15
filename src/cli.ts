@@ -2,13 +2,17 @@
 
 import { Command } from 'commander';
 import { initCommand } from './commands/init';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const pkg = require('../package.json') as { version: string };
 
 const program = new Command();
 
 program
   .name('chi')
   .description('CLI for Chi')
-  .version('1.0.0');
+  .version(pkg.version);
 
 // 初始化项目命令
 program

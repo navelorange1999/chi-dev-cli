@@ -2,6 +2,15 @@
     "name": "@chi/cli",
     "version": "1.0.0",
     "description": "CLI for Chi",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/navelorange1999/chi-dev-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/navelorange1999/chi-dev-cli/issues"
+    },
+    "homepage": "https://github.com/navelorange1999/chi-dev-cli#readme",
     "main": "dist/cli.js",
     "bin": {
         "chi": "./dist/cli.js"
@@ -10,12 +19,17 @@
         "dev": "tsx src/cli.ts",
         "build": "tsup",
         "start": "node dist/cli.js",
+        "prepublishOnly": "npm run build",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
         "cli"
     ],
     "author": "navelorange1999",
+    "publishConfig": {
+        "access": "public"
+    },
+    "packageManager": "bun@1.1.45",
     "dependencies": {
         "chalk": "^5.3.0",
         "commander": "^12.1.0",
