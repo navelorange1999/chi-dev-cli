@@ -33,17 +33,11 @@ bun install -g @chi/cli
 git clone <repository-url>
 cd chi-dev-cli
 
-# Install dependencies
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
+# Install dependencies (recommended)
+bun install --frozen-lockfile
 
 # Build the project
-npm run build
+bun run build
 ```
 
 ## Usage
@@ -121,35 +115,67 @@ $ chi init my-awesome-project
 
 ### Prerequisites
 
-- Node.js 18+ or Bun
-- npm, yarn, pnpm, or bun
+- Node.js 18+
+- Bun (recommended)
 
 ### Scripts
 
 ```bash
+# Install deps
+bun install --frozen-lockfile
+
 # Development mode (runs TypeScript directly)
-npm run dev
+bun run dev
 
 # Build for production
-npm run build
+bun run build
 
 # Run built version
-npm start
+bun run start
 ```
+
+### Release / Publish (Maintainers)
+
+This repo uses **release-please** to manage versions/tags/GitHub Releases, and a separate workflow to publish to **npm** automatically.
+
+**How it works**
+
+1. Every push to `master` updates/creates a **Release PR** (via GitHub Actions).
+2. Merging the Release PR will:
+    - bump `package.json` version
+    - update changelog content in the PR
+    - create a git tag (usually `vX.Y.Z`)
+    - create a GitHub Release
+3. When the GitHub Release is **published**, another workflow builds with Bun and runs `npm publish`.
+
+**Requirements**
+
+- GitHub repo secret: `NPM_TOKEN`
+   - Create an npm **Automation token** and add it at: GitHub repo → Settings → Secrets and variables → Actions → New repository secret
+
+**Commit message convention (recommended)**
+
+release-please is designed to work best with Conventional Commits, for example:
+
+- `feat: add new init option` (minor)
+- `fix: handle empty project name` (patch)
+- `feat!: change default template` (major)
+
+### Project Structure
 
 ### Project Structure
 
 ```
 chi-dev-cli/
 ├── src/
-│   ├── cli.ts                 # Main CLI entry point
+│   ├── cli.ts                  # Main CLI entry point
 │   ├── commands/
-│   │   └── init.ts           # Init command implementation
+│   │   └── init.ts              # Init command implementation
 │   └── utils/
-│       ├── prompts.ts        # Interactive prompts
-│       ├── configGenerators.ts # Configuration file generators
-│       ├── templateGenerators.ts # Template file generators
-│       └── projectGenerator.ts # Main project generator
+│       ├── prompts.ts           # Interactive prompts
+│       ├── configGenerators.ts  # Configuration file generators
+│       └── projectGenerator.ts  # Main project generator
+├── templates/                   # Project templates
 ├── dist/                      # Build output
 ├── tsconfig.json              # TypeScript configuration
 ├── tsup.config.ts             # Build configuration
