@@ -155,11 +155,13 @@ This repo uses **release-please** to manage versions/tags/GitHub Releases, and a
 
 **Commit message convention (recommended)**
 
-release-please is designed to work best with Conventional Commits, for example:
+release-please expects **Conventional Commits** to decide version bumps. For example:
 
 - `feat: add new init option` (minor)
 - `fix: handle empty project name` (patch)
 - `feat!: change default template` (major)
+
+Note: the repo currently bootstraps release-please from a specific commit (see `.release-please-config.json`) to avoid parsing the older, non-conventional history.
 
 ### Project Structure
 
@@ -212,6 +214,15 @@ All projects include:
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+### Commit Message Policy
+
+This repo enforces **Conventional Commits** via:
+
+- a local git hook (Husky + commitlint)
+- a GitHub Action check on Pull Requests
+
+If your PR check fails, rename/squash commits to follow the format (e.g. `feat: ...`, `fix: ...`, `chore: ...`).
 
 ## License
 

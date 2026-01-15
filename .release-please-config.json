@@ -1,5 +1,6 @@
 {
   "release-type": "node",
+  "bootstrap-sha": "ea21edd9d1d4f294e253b655bb1c4bcf42384bb0",
   "packages": {
     ".": {
       "package-name": "@chi/cli"

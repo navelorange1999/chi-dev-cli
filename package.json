@@ -19,7 +19,9 @@
         "dev": "tsx src/cli.ts",
         "build": "tsup",
         "start": "node dist/cli.js",
+        "cz": "bunx cz",
         "prepublishOnly": "npm run build",
+        "prepare": "husky install",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -38,15 +40,25 @@
         "ora": "^8.1.1"
     },
     "devDependencies": {
+        "@commitlint/cli": "^19.6.0",
+        "@commitlint/cz-commitlint": "^19.6.0",
+        "@commitlint/config-conventional": "^19.6.0",
         "@types/fs-extra": "^11.0.4",
         "@types/inquirer": "^9.0.7",
         "@types/node": "^22.10.2",
         "@typescript-eslint/eslint-plugin": "^8.18.2",
         "@typescript-eslint/parser": "^8.18.2",
+        "commitizen": "^4.3.1",
         "eslint": "^9.17.0",
+        "husky": "^9.1.7",
         "nodemon": "^3.1.9",
         "tsup": "^8.3.5",
         "tsx": "^4.19.2",
         "typescript": "^5.7.2"
+    },
+    "config": {
+        "commitizen": {
+            "path": "@commitlint/cz-commitlint"
+        }
     }
 }
