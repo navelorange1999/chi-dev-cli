@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/navelorange1999/chi-dev-cli/compare/cli-v1.1.0...cli-v1.1.1) (2026-01-16)
+
+
+### Bug Fixes
+
+* **package:** correct package name formatting ([a629a65](https://github.com/navelorange1999/chi-dev-cli/commit/a629a6540a3c7b14a2f18a1283b91efa75545c16))
+
 ## [1.1.0](https://github.com/navelorange1999/chi-dev-cli/compare/cli-v1.0.0...cli-v1.1.0) (2026-01-16)
 
 
