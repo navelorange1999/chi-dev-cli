@@ -17,13 +17,13 @@ A powerful command-line tool for quickly initializing modern web projects with y
 ### Global Installation
 
 ```bash
-npm install -g @chi/cli
+npm install -g @chanchi/cli
 # or
-yarn global add @chi/cli
+yarn global add @chanchi/cli
 # or
-pnpm add -g @chi/cli
+pnpm add -g @chanchi/cli
 # or
-bun install -g @chi/cli
+bun install -g @chanchi/cli
 ```
 
 ### Local Development

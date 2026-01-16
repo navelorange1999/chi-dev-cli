@@ -1,5 +1,5 @@
 {
-    "name": "@chi/cli",
+    "name": "@chanchanchi/cli",
     "version": "1.0.0",
     "description": "CLI for Chi",
     "type": "module",

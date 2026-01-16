@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "@chi/cli",
+      "name": "@chanchi/cli",
       "dependencies": {
         "chalk": "^5.3.0",
         "commander": "^12.1.0",
